@@ -8,13 +8,14 @@ const stripe = require("stripe")( process.env.STRIPE_KEY);
 
 
 const app = express();
-app.use(cors({origin: "true"}));
+// to allow cross origin requests
+app.use(cors({origin: true}));
 
 app.use(express.json());
 
 app.get("/", (req, res) => {
     res.status(200).json({
-        message: "Hello from FirebaseIt is working !",});
+        message: "Hello, It is working !",});
 
     });
 
